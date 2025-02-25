@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} News{% endblock title %}
+
+{% block body %}
+    <section class="section">
+        <div class="container">
+            <div class="rows">
+                <div class="column is-offset-16 is-10">
+                    {% for title, desc, i in mylist %}
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{ title }}</span>
+                                        <br>
+                                        <img src="{{ i }}" alt="">
+                                        <span class="subtitle">{{ desc }}</span>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}

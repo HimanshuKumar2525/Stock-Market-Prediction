@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+<h2>Welcome to NSC Stock : Your Ultimate Stock Market Prediction Platform!</h2>
+<h3>Where Marketing is an investment, not a cost.</h3>
+{% endblock content %}
+{% block body %}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    What's todays news?
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="rows">
+                <div class="column is-offset-16 is-10">
+                    {% for title, desc, i in mylist %}
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{ title }}</span>
+                                        <br>
+                                        <img src="{{ i }}" alt="">
+                                        <span class="subtitle">{{ desc }}</span>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}
